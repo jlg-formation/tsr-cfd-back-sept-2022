@@ -6,6 +6,10 @@ const port = 3000;
 
 const www = "./public";
 
+app.get("/api/date", (req, res) => {
+  res.json({ now: new Date() });
+});
+
 app.use(express.static(www));
 app.use(serveIndex(www, { icons: true }));
 
